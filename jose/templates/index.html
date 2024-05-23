@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dj pP</title>
+    <meta name="description" content="Contratación de artistas. Directorio de artistas. Contrata todo tipo de artistas. Contratación de artistas " />
+    <meta name="keywords" content="contratacion artistas, contratacion cantantes, contratación artistas, contratación cantantes, grupos de musica, contratación de grupos de musica,espectáculo,espectáculo,espectaculos,espectaculo,música,musica,musica urbana,musica popular,estilos musicales,teatro,fiesta,payasos,magos " />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Roboto:400,400i,700,900" rel="stylesheet">
+    <script>
+        
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-788438-1', 'auto');ga('send', 'pageview');
+        </script>
+</head>
+<body>
+<header class="fixed-top">
+<div class="max-width mx-auto">
+<nav class="navbar navbar-expand-md">
+<div class="text-hide position-absolute">Dj pP</div>
+<a class="navbar-brand" href="{% url 'basic_app:home' %}">Dj pP <br>!QUE NO PARE LA FIESTA! <i class="fa-solid fa-music"></i></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a class="edit-user nav-link" href="{% url 'basic_app:home' %}" target="_blank">Hogar</a>
+        </li>
+<li class="nav-item dropdown">
+<a class="edit-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artistas <span>+</span></a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<a class="dropdown-item" href="{% url 'basic_app:artistone' %}" >Artistas</a>
+<a class="dropdown-item" href="{% url 'basic_app:managerone' %}" >Managers</a>
+
+</div>   
+</li>
+
+<li class="nav-item">
+<a class="edit-user nav-link" href="https://quenoparelafiesta.es" target="_blank">Blog</a>
+</li>
+<li class="nav-item dropdown menu-language">
+<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-es" style="vertical-align: middle">ESP</span></a>
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+<div class="d-flex flex-row flex-wrap flags">
+<a class="flag-container" href="#"><span class="flag-icon flag-es">ES</span></a>
+<a class="flag-container" href="#"><span class="flag-icon flag-en">GB</span></a>
+<a class="flag-container" href="//www.einapplaus.de/"><span class="flag-icon flag-de">DE</span></a>
+<a class="flag-container" href="//www.unaplauso.com/ve/"><span class="flag-icon flag-ve">VE</span></a>
+<a class="flag-container" href="//www.unaplauso.com/uy/"><span class="flag-icon flag-uy">UY</span></a>
+<a class="flag-container" href="//www.einapplaus.de/ch/"><span class="flag-icon flag-ch">CH</span></a>
+<a class="flag-container" href="//www.unaplauso.com/pe/"><span class="flag-icon flag-pe">PE</span></a>
+<a class="flag-container" href="//www.unaplauso.com/py/"><span class="flag-icon flag-py">PY</span></a>
+<a class="flag-container" href="//www.unaplauso.com.mx/"><span class="flag-icon flag-mx">MX</span></a>
+<a class="flag-container" href="//www.unaplauso.com/cr/"><span class="flag-icon flag-cr">CR</span></a>
+<a class="flag-container" href="//www.unaplauso.com/co/"><span class="flag-icon flag-co">CO</span></a>
+<a class="flag-container" href="//www.unaplauso.com/cl/"><span class="flag-icon flag-cl">CL</span></a>
+<a class="flag-container" href="//www.unaplauso.com/bo/"><span class="flag-icon flag-bo">BO</span></a>
+<a class="flag-container" href="//www.einapplaus.de/at/"><span class="flag-icon flag-at">AT</span></a>
+<a class="flag-container" href="//www.unaplauso.com/ar/"><span class="flag-icon flag-ar">AR</span></a>
+</div>
+</div>   
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</header>
+<div id="home">
+<section class="carousel-artistas">
+<div id="carouselArtists" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#carouselArtists" data-slide-to="0" class="active"></li>
+<li data-target="#carouselArtists" data-slide-to="1"></li>
+<li data-target="#carouselArtists" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+    <a href="{% url 'basic_app:artisttwo' %}" class="carousel-item">
+        <span class="photo-fade"></span>
+        <img src="{% static 'images/joseone.JPG' %}" class="d-block w-100 adjustimg" alt="despedidas">
+        <div class="carousel-caption text-left">
+        <h2>Despedidas</h2>
+        <p class="lead">Sorprende a las futuras parejas con algo diferente</p>
+        </div>
+        </a>
+<a href="{% url 'basic_app:artisttwo' %}" class="carousel-item active">
+<span class="photo-fade"></span>
+<img src="{% static 'images/djthree.jpg' %}" class="d-block w-100 adjustimg" alt="bodas">
+<div class="carousel-caption text-left">
+<h2>Bodas</h2>
+<p class="lead">Haz que tu día sea más especial poniéndole música</p>
+</div>
+</a>
+<a href="{% url 'basic_app:artisttwo' %}" class="carousel-item">
+<span class="photo-fade"></span>
+<img src="{% static 'images/girls.jpg' %}" class="d-block w-100 adjustimg" alt="conciertos">
+<div class="carousel-caption text-left">
+<h2>Conciertos</h2>
+<p class="lead">Más de 1.000 orquestas para tus conciertos</p>
+</div>
+</a>
+<a href="{% url 'basic_app:artisttwo' %}" class="carousel-item">
+<span class="photo-fade"></span>
+<img src="{% static 'images/djfour.jpg' %}" class="d-block w-100 adjustimg" alt="despedidas">
+<div class="carousel-caption text-left">
+<h2>Despedidas</h2>
+<p class="lead">Sorprende a las futuras parejas con algo diferente</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="buscador">
+<div class="container-fluid py-5">
+<form method="post" action="https://www.unaplauso.com/redirect_ir.html" class="d-block text-center">
+<div class="dropdown d-sm-inline-block mb-1">
+<button class="btn btn-outline-dark dropdown-toggle" type="button" id="buscadorQue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    ¿Encontraste lo que buscas? Tenemos todo lo que necesitas
+</button>
+
+<p class="text-center mt-3"><a class="text-muted" href="{% url 'basic_app:contact' %}"><strong>¿Necesitas ayuda? Podemos ayudarte a buscar</strong></a><span class="icon icon-info"></span></p>
+</div>
+</section>
+<section class="destacados bg-light volumetria">
+<div class="container py-5">
+<h3 class="text-center">Algunos de nuestros vídeos</h3>
+<div class="grid-fotos">
+    <div class="row no-gutters">
+
+        <div class="col-2 col-lg-1 grid-thumb videos">
+            <video width="165" height="152" controls>
+                <source src="{% static 'videos/video10.mp4' %}" type="video/mp4">
+              </video>
+            </div>
+
+    <div class="col-2 col-lg-1 grid-thumb videos">
+        <video width="165" height="152" controls>
+            <source src="{% static 'videos/video9.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+
+    <div class="col-2 col-lg-1 grid-thumb videos">
+        <video width="165" height="152" controls>
+            <source src="{% static 'videos/video3.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="col-2 col-lg-1 grid-thumb videos">
+        <video width="165" height="152" controls>
+            <source src="{% static 'videos/video4.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+
+    <div class="col-2 col-lg-1 grid-thumb videos">
+        <video width="165" height="152" controls>
+            <source src="{% static 'videos/video9.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+
+    <div class="col-2 col-lg-1 grid-thumb videos">
+        <video width="165" height="152" controls>
+            <source src="{% static 'videos/video8.mp4' %}" type="video/mp4">
+        </video>
+        </div>
+
+        <div class="col-2 col-lg-1 grid-thumb videos">
+            <video width="165" height="152" controls>
+                <source src="{% static 'videos/video10.mp4' %}" type="video/mp4">
+            </video>
+            </div>
+
+            <div class="col-2 col-lg-1 grid-thumb videos">
+                <video width="165" height="152" controls>
+                    <source src="{% static 'videos/video9.mp4' %}" type="video/mp4">
+                </video>
+                </div>
+
+                <div class="col-2 col-lg-1 grid-thumb videos">
+                    <video width="165" height="152" controls>
+                        <source src="{% static 'videos/video3.mp4' %}" type="video/mp4">
+                    </video>
+                    </div>
+
+            <div class="col-2 col-lg-1 grid-thumb videos">
+                <video width="165" height="152" controls>
+                    <source src="{% static 'videos/video4.mp4' %}" type="video/mp4">
+                </video>
+                </div>
+    
+            <div class="col-2 col-lg-1 grid-thumb videos">
+                <video width="165" height="152" controls>
+                    <source src="{% static 'videos/video10.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+</section>
+<section class="how">
+<div class="container py-5">
+<div class="row">
+<div class="card col-12 col-sm-6 col-lg-3">
+<img src="{% static 'images/icon-how-01.svg' %}" class="d-block" alt="card 1" />
+<div class="card-body text-center text-sm-left">
+<h5 class="card-title">Tipo de evento</h5>
+<p class="card-text">¿Qué estas tramando? Selecciona el tipo de evento y el tipo de artista que encaje con tu fiesta.</p>
+</div>
+</div>
+<div class="card col-12 col-sm-6 col-lg-3">
+<img src="{% static 'images/icon-how-02.svg' %}" class="d-block" alt="card 2" />
+<div class="card-body text-center text-sm-left">
+<h5 class="card-title">Elige al artista</h5>
+<p class="card-text">Explora la ficha del artista con sus fotos, vídeos o audios. Todo ayuda para seleccionar al mejor.</p>
+</div>
+</div>
+<div class="card col-12 col-sm-6 col-lg-3">
+<img src="{% static 'images/icon-how-03.svg' %}" class="d-block" alt="card 3" />
+<div class="card-body text-center text-sm-left">
+<h5 class="card-title">Compara</h5>
+<p class="card-text">Busca otros artistas similares y contrasta talentos, precios, cercanía o atención al cliente.</p>
+</div>
+</div>
+<div class="card col-12 col-sm-6 col-lg-3">
+<img src="{% static 'images/icon-how-04.svg' %}" class="d-block" alt="card 4" />
+<div class="card-body text-center text-sm-left">
+<h5 class="card-title">¡Contáctalo!</h5>
+<p class="card-text">Tienes el evento. Tienes al artista que deseas. Solo tienes que ponerte en contacto y ¡que no pare la fiesta!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="volumetria">
+<div class="grid-fotos">
+<div class="row no-gutters">
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-banda.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-danza.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-dj.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-flamenco.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-folk.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-folk-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-indie.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-jazz.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-mago.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-mariachi.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-orquesta.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-payaso.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-payaso-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-reggaeton.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-rock.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-teatro.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/thumb-concert.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/thumb-wedding.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/thumb-wedding-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-banda.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-danza.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-dj.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-flamenco.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-folk.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-folk-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-indie.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-jazz.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-mago.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-mariachi.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-orquesta.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-payaso.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-payaso-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-reggaeton.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-rock.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-teatro.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/thumb-concert.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/thumb-wedding.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/thumb-wedding-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-banda.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-danza.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-dj.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-flamenco.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-folk.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-folk-2.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-indie.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-jazz.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-mago.jpg" alt="" /></div>
+<div class="col-2 col-lg-1 grid-thumb"><img class="d-block w-100" src="//www.unaplauso.com/img/ua2.5-100px/category-mariachi.jpg" alt="" /></div>
+</div>
+</div>
+<div class="datos bg-primary">
+<span class="top-arrow"></span>
+<div class="row no-gutters text-center py-5">
+<div class="col mb-4 mb-lg-0">
+<div class="px-2">
+<h3 class="text-white font-weight-bold display-4">19.116</h3>
+<h3 class="text-white">Artistas registrados</h3>
+</div>
+</div>
+<div class="col mb-4 mb-lg-0">
+<div class="px-2">
+<h3 class="text-white font-weight-bold display-4">386.725</h3>
+<h3 class="text-white">Actuaciones generadas</h3>
+</div>
+</div>
+<div class="col">
+<div class="px-2">
+<h3 class="text-white font-weight-bold display-4">31.039</h3>
+<h3 class="text-white">Opiniones disponibles</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="clientes bg-light">
+<div class="container py-5">
+<h3 class="text-center">comentarios del artista</h3>
+
+
+<div id="carouselQuotes" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Divertidísimo, muy ágil en su espectáculo, fenomenal y elegante haciendo participar e involucrando a la gente. Fue todo un acierto poder contar con un profesional del humor de su talla ayer en el cumpleaños de nuestra hija. Ha sido el puntazo que hará el día inolvidable para ella y para todos los que allí estuvimos. Gracias Jose. Eres un crack."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Francisco Fernández del Rey - Humorista</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Dos excelentes músicos con una selección de canciones insuperable. Sin duda volveremos a contratarlos otra vez. 100% recomendado"</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Sara Escribano - Grupos de Rock</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Tuve la oportunidad de verlo en un bautizo de una amiga y me parece que pocos cantantes pueden hacer lo que el hace naturalmente, ademas tiene un repertorio tan extenso que todos quedamos complacidos, sin duda que tal cual lo vio mi amiga en los videos y su esposo dijo, una cosa es que uno lo vea en los videos y otra en vivo... es más impresionante tenerlo al frente!"</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Gabriela Rojas - Pequeño formato</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Os escribo para daros las gracias por lo bien que nos lo habéis hecho pasar. No habéis dejado a nadie indiferente. Sin ninguna duda volveríamos a elegiros en otra ocasión. Muchas gracias por aportar ese granito de magia en nuestra boda."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Juan Sanz - Flamenco</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Empezando por la posibilidad de elegir las canciones de un extenso repertorio con clásicos y no tan clásicos, pasando por que hicieron bailar a TODOS los invitados (jóvenes y mayores) y terminando por que clavaron todos los temas fueran del estilo que fueran, el tenerlos en nuestra boda fue un gran acierto. ¡Recomendadísimos!"</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Tomás Martín Acedo - Orquesta</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Los contraté para sorprender a mi padre por su 50 cumpleaños y la verdad que quedamos asombrados, la calidad musical de éste grupo es fantástica, nos hicieron disfrutar de momentos mágicos con su música. 100% recomendable"</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Norberto García Martínez - Mariachi</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"En la descripción tienen razón, es un espectáculo único y unos precios muy competitivos, nos lo pasamos en grande, como unos niños, nos encantó en esta comunión y el año que viene también le vamos a traer."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Juan Juanito - Mago</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Gracias por habernos hecho pasar un día genial a todos nosotros. Lo hemos pasado muy bien. Gran repertorio de canciones y derrochando simpatía .... nuestra familia os va a recomendar siempre."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Araceli Cruz - Tuna</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Contratamos DJ pP y a sus dos extraordinarios músicos acompañantes para las bodas de oro de mis padres. La profesionalidad y  calidad de la actuación es fuera de serie por musicalidad y capacidad de comunicación con el público. 100% recomendados."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">José Luis Jurjo Soleda - Grupos de Jazz</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Los he visto en alguna boda. Y son de lo mejor. Responsables, serios y tienen unos trajes preciosos."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Horacio Marcote - Regional</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Me casé hace dos semanas en Toledo. Contratamos este coro porque queríamos dar al Monasterio de San Juan de los Reyes un toque diferente, y no queríamos música clásica.Tengo que decir que acertamos completamente con la elección. La actuación fue increíble,los invitados nos han repetido en estos días que la ceremonia fue preciosa.Nosotros también estamos encantados e incluso la chica que nos hizo el vídeo quedo perpleja con las voces de estas artistas.Habíamos escuchado y visto vídeos en YOUTUBE, pero nada que ver con su directo. Ademas el trato de Raquel fue muy bueno con nosotros a la hora de escoger el repertorio. Lo recomendamos al 100%!!! No fallareis!!! :)"</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Nazareth González Redondo - Coral</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Excelente dj y muy buena música, muy buen montaje de luces y sonido. Buena animación."</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Jose Luis Sanchez - DJ</footer>
+</blockquote>
+</div>
+<div class="carousel-item">
+<blockquote class="blockquote text-center">
+<p class="mb-0 lead">"Los contratamos para las fiestas de nuestro pueblo. El primer día fueron con una pareja de baile y danzaron en la procesión (el baile de la jarra) y fue precioso. También tocaron en misa y fue muy emotivo. Al día siguiente vinieron los dos solos para hacer un pasabares y lo pasamos genial. ;)"</p>
+<footer class="blockquote-footer text-primary font-weight-bold mt-2">Luis Gómez - Regional</footer>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<footer class="page-footer">
+<div class="container">
+<div class="clearfix text-center">
+<ul class="float-lg-left list-inline footer-links">
+<li class='list-inline-item'><a href="{% url 'basic_app:about' %}">Quiénes Somos</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:faq' %}">Preguntas frecuentes</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:contact' %}">Contacto</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:legal' %}">Condiciones legales</a></li>
+<li class='list-inline-item'><a href='http://quenoparelafiesta.es/' target='_blank'>#QueNoPareLaFiesta</a></li>
+</ul>
+<ul class="float-lg-right list-inline share-icons mt-4 mt-lg-0">
+<li class="list-inline-item share-icon"><a href="https://www.facebook.com/pages/unAplauso/41439617363" target="_blank"><img width="24" height="24" alt="facebook" src="//www.unaplauso.com/img/ua2.5-icons/social/Facebook.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://twitter.com/#!/unAplauso_es" target="_blank"><img width="24" height="24" alt="twitter" src="//www.unaplauso.com/img/ua2.5-icons/social/Twitter.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://www.instagram.com/unaplauso.es/" target="_blank"><img width="24" height="24" alt="instagram" src="//www.unaplauso.com/img/ua2.5-icons/social/Instagram.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://www.linkedin.com/company/unaplauso.com/" target="_blank"><img width="24" height="24" alt="linkedIn" src="//www.unaplauso.com/img/ua2.5-icons/social/LinkedIn.svg" /></a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>   
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/scripts.js"></script></body>
+</html>

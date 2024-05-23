@@ -1,0 +1,1483 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Managers</title>
+    <meta name="description" content="Contratación de artistas. Directorio de artistas. Contrata todo tipo de artistas. Contratación de artistas " />
+    <meta name="keywords" content="contratacion artistas, contratacion cantantes, contratación artistas, contratación cantantes, grupos de musica, contratación de grupos de musica,espectáculo,espectáculo,espectaculos,espectaculo,música,musica,musica urbana,musica popular,estilos musicales,teatro,fiesta,payasos,magos " />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Roboto:400,400i,700,900" rel="stylesheet">
+    <script>
+        
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-788438-1', 'auto');ga('send', 'pageview');
+        </script>
+</head>
+<body>
+<header class="fixed-top">
+<div class="max-width mx-auto">
+<nav class="navbar navbar-expand-md">
+<div class="text-hide position-absolute">DjpP</div>
+<a class="navbar-brand" href="{% url 'basic_app:managerone' %}">
+    <a class="navbar-brand" href="{% url 'basic_app:home' %}">Dj pP <br>!QUE NO PARE LA FIESTA! <i class="fa-solid fa-music"></i></a>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="edit-user nav-link" href="{% url 'basic_app:home' %}" target="_blank">Hogar</a>
+            </li>
+    <li class="nav-item dropdown">
+    <a class="edit-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artistas <span>+</span></a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="{% url 'basic_app:artistone' %}" >Artistas</a>
+    <a class="dropdown-item" href="{% url 'basic_app:managerone' %}" >Managers</a>
+    </div>   
+    </li>
+    
+    <li class="nav-item">
+    <a class="edit-user nav-link" href="https://quenoparelafiesta.es" target="_blank">Blog</a>
+    </li>
+    <li class="nav-item dropdown menu-language">
+    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-es" style="vertical-align: middle">ESP</span></a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+    <div class="d-flex flex-row flex-wrap flags">
+    <a class="flag-container" href="#"><span class="flag-icon flag-es">ES</span></a>
+    <a class="flag-container" href="#"><span class="flag-icon flag-en">GB</span></a>
+    <a class="flag-container" href="//www.einapplaus.de/"><span class="flag-icon flag-de">DE</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/ve/"><span class="flag-icon flag-ve">VE</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/uy/"><span class="flag-icon flag-uy">UY</span></a>
+    <a class="flag-container" href="//www.einapplaus.de/ch/"><span class="flag-icon flag-ch">CH</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/pe/"><span class="flag-icon flag-pe">PE</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/py/"><span class="flag-icon flag-py">PY</span></a>
+    <a class="flag-container" href="//www.unaplauso.com.mx/"><span class="flag-icon flag-mx">MX</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/cr/"><span class="flag-icon flag-cr">CR</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/co/"><span class="flag-icon flag-co">CO</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/cl/"><span class="flag-icon flag-cl">CL</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/bo/"><span class="flag-icon flag-bo">BO</span></a>
+    <a class="flag-container" href="//www.einapplaus.de/at/"><span class="flag-icon flag-at">AT</span></a>
+    <a class="flag-container" href="//www.unaplauso.com/ar/"><span class="flag-icon flag-ar">AR</span></a>
+    </div>
+    </div>   
+    </li>
+    </ul>
+    </div>
+    </nav>
+    </div>
+    </header> <br><br><br>
+<div id="page-list" class="container py-4 position-relative">
+<div id="list-header" class="row no-gutters align-items-start mb-4">
+<div class="col">
+<h4 class="d-inline-block">Managers <span class="badge badge-primary">314</span></h4>
+<nav id="breadcrumb" class="d-none d-md-inline-block ml-2" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a class="font-weight-bold text-body enlacesSearch" rel="nofollow" href="{% url 'basic_app:home' %}">Página principal</a></li>
+<li class="breadcrumb-item"><a class="font-weight-bold text-body enlacesSearch"  href="{% url 'basic_app:managerone' %}">Managers</a></li>
+<li class="breadcrumb-item active" aria-current="page">Managers</li>
+</ol>
+</nav>
+<div class="similar small">
+<strong>Similar a Managers:</strong>
+<a href="#" class="similar-item text-muted" title="managers de actores">managers de actores</a>
+<a href="#" class="similar-item text-muted" title="managers de musica">managers de musica</a>
+<a href="#" class="similar-item text-muted" title="animacion comuniones en la coruña">animacion comuniones en la coruña</a>
+<a href="#" class="similar-item text-muted" title="hinchables galicia">hinchables galicia</a>
+<a href="#" class="similar-item text-muted" title="servicios cuenta cuentos castellón">servicios cuenta cuentos castellón</a>
+<a href="#" class="similar-item text-muted" title="organizacion conciertos y espectaculos alava">organizacion conciertos y espectaculos alava</a>
+<a href="#" class="similar-item text-muted" title="animaciones comuniones en alicante">animaciones comuniones en alicante</a>
+<a href="#" class="similar-item text-muted" title="CUENTA CUENTOS EN MURCIA">cuenta cuentos en murcia</a>
+<a href="#" class="similar-item text-muted" title="managers, representantes">managers, representantes</a>
+<a href="#" class="similar-item text-muted" title="pasacalles hinchables">pasacalles hinchables</a>
+</div>
+</div>
+</div>
+<div class="row no-gutters">
+<!-- FILTER -->
+<div id="filter" class="col-12 col-md-3 pr-md-2 mb-3">
+<div class="sticky-top">
+<h5 class="text-muted mb-3">Filtrar resultados</h5>
+<div class="filter-desktop d-none d-md-flex flex-md-column">
+<div class="filter-category flex-fill mt-md-1">
+<h6>por tipo de evento</h6>
+<ul class="list-unstyled sublist-filter small">
+<li><a href="#" title="Managers Eventos">Eventos (119)</a></li>
+<li><a href="#" title="Managers Fiestas">Fiestas (107)</a></li>
+<li><a href="#" title="Managers Celebraciones">Celebraciones (101)</a></li>
+<li><a href="#" title="Managers Conciertos">Conciertos (92)</a></li>
+<li><a href="#" title="Managers Festivales">Festivales (56)</a></li>
+<li><a href="#" title="Managers Boda">Boda (48)</a></li>
+<li class="mt-1"><a href="#" class="text-info" data-toggle="modal" data-target="#modalEventos">[+] más eventos</a></li>
+</ul>
+</div>
+<div class="filter-category flex-fill mt-md-1">
+<h6>por provincia</h6>
+<ul class="list-unstyled sublist-filter small">
+<li><a href="#" title="Managers en Madrid">Madrid (226)</a></li>
+<li><a href="#" title="Managers en Barcelona">Barcelona (196)</a></li>
+<li><a href="#" title="Managers en Valencia">Valencia (133)</a></li>
+<li><a href="#" title="Managers en Tarragona">Tarragona (132)</a></li>
+<li><a href="#" title="Managers en Sevilla">Sevilla (129)</a></li>
+<li><a href="#" title="Managers en Girona">Girona (128)</a></li>
+<li class="mt-1"><a href="#" class="text-info" data-toggle="modal" data-target="#modalProvincias">[+] más provincias</a></li>
+</ul>
+</div>
+<div class="filter-category flex-fill mt-md-1">         
+<h6>por etiqueta</h6>
+<ul class="list-unstyled sublist-filter small">
+<li><a href="#" title="Managers animadora">animador</a></li>
+<li><a href="#" title="Managers monólogo">monólogos</a></li>
+<li><a href="#" title="Managers animador">animación</a></li>
+<li><a href="#" title="Managers pinchadiscos">pinchadiscos</a></li>
+<li><a href="#" title="Managers divertido">humor</a></li>
+<li><a href="#" title="Managers cuentacuentos">cuentacuentos</a></li>
+<li><a href="#" title="Managers juegos">juegos</a></li>
+<li><a href="#" title="Managers ARTE">ARTE</a></li>
+<li><a href="#" title="Managers mago">mago</a></li>
+<li><a href="#" title="Managers payaso">payaso</a></li>
+<li><a href="#" title="Managers sello discográfico">discográfica</a></li>
+<li><a href="#" title="Managers audiovisual">audiovisual</a></li>
+<li><a href="#" title="Managers producción musical">produccion musical</a></li>
+<li><a href="#" title="Managers producción de eventos">organización de eventos</a></li>
+<li><a href="#" title="Managers promoción giras">promotor artístico</a></li>
+<li><a href="#" title="Managers representantes artísticos">representantes artísticos</a></li>
+<li><a href="#" title="Managers ARTE">Asociación Representantes Técnicos del Espectáculo</a></li>
+<li><a href="#" title="Managers artistas famosas">artistas famosos</a></li>
+<li><a href="#" title="Managers producción espectáculos">producción espectáculos</a></li>
+<li><a href="#" title="Managers agencia de espectáculos">agencias de espectáculos</a></li>
+</ul>
+</div>
+</div><!-- .filter-desktop -->
+<form class="filter-mobile d-block d-md-none" method="post">
+<div class="row no-gutters">
+<div class="col-xs-12 col-sm-4 px-1">
+<select name="searchTipoCategoria" id="searchTipoCategoria" class="select custom-select mb-1 col-12">
+<option value="" selected disabled>
+-- Por categoría
+</option>
+<optgroup label="Empresas y servicios">
+<option selected value="{% url 'basic_app:managerone' %}">Managers</option>
+</optgroup>
+</select>
+</div>
+<div class="col-xs-12 col-sm-4 px-1">
+<select name="searchTipoEvento" id="searchTipoEvento" class="select custom-select mb-1">
+<option value="" selected disabled>
+-- Por tipo de evento
+</option>
+<option href value="#">Eventos</option>
+<option  value="#">Fiestas</option>
+<option  value="#">Celebraciones</option>
+<option  value="#">Conciertos</option>
+<option  value="#">Festivales</option>
+<option  value="#">Boda</option>
+<option  value="#">Fiestas infantiles</option>
+<option  value="#">Fiesta mayor</option>
+<option  value="#">Cumpleaños</option>
+<option  value="#">Ferias</option>
+<option  value="#">Aniversario</option>
+<option  value="#">Comuniones</option>
+<option  value="#">Despedidas de soltera</option>
+<option  value="#">Presentaciones</option>
+<option  value="#">Congreso</option>
+<option  value="#">Pasacalles</option>
+<option  value="#">Banquetes</option>
+<option  value="#">Convención</option>
+<option  value="#">Inauguracion</option>
+<option  value="#">Bautizo</option>
+<option  value="#">Cena</option>
+<option  value="#">Exposiciones</option>
+<option  value="#">Bienvenida</option>
+<option  value="#">Cóctel</option>
+<option  value="#">Fiestas nochevieja</option>
+<option  value="#">Cruceros</option>
+<option  value="#">Recepcion</option>
+</select>
+</div>
+<div class="col-xs-12 col-sm-4 px-1">
+<select name="searchTipoProv" id="searchTipoProv" class="select custom-select">
+<option value="" selected disabled>
+-- Por Provincia
+</option>
+<option  value="#">Madrid</option>
+<option  value="#">Barcelona</option>
+<option  value="#">Valencia</option>
+<option  value="#">Tarragona</option>
+<option  value="#">Sevilla</option>
+<option  value="#">Girona</option>
+<option  value="#">Alicante</option>
+<option  value="#">A Coruña</option>
+<option  value="#">Zaragoza</option>
+<option  value="#">Málaga</option>
+<option  value="#">Asturias</option>
+<option  value="#">Guadalajara</option>
+<option  value="#">Cádiz</option>
+<option  value="#">Almería</option>
+<option  value="#">Badajoz</option>
+<option  value="#">Toledo</option>
+<option  value="#">Córdoba</option>
+<option  value="#">Avila</option>
+<option  value="#">Lleida</option>
+<option  value="#">Granada</option>
+<option  value="#">Cantabria</option>
+<option  value="#">Huelva</option>
+<option  value="#">Navarra</option>
+<option  value="#">Guipúzcoa</option>
+<option  value="#">Álava</option>
+<option  value="#">Tenerife</option>
+<option  value="#">León</option>
+<option  value="#">Las Palmas</option>
+<option  value="#">Murcia</option>
+<option  value="#">Burgos</option>
+<option  value="#">Valladolid</option>
+<option  value="#">Segovia</option>
+<option  value="#">Vizcaya</option>
+<option  value="#">Jaén</option>
+<option  value="#">La Rioja</option>
+<option  value="#">Ciudad Real</option>
+<option  value="#">Salamanca</option>
+<option  value="#">Huesca</option>
+<option  value="#">Cáceres</option>
+<option  value="#">Cuenca</option>
+<option  value="#">Castellón</option>
+<option  value="#">Palencia</option>
+<option  value="#">Baleares</option>
+<option  value="#">Zamora</option>
+<option  value="#">Soria</option>
+<option  value="#">Albacete</option>
+<option  value="#">Pontevedra</option>
+<option  value="#">Ceuta</option>
+<option  value="#">Teruel</option>
+<option  value="#">Ourense</option>
+<option  value="#">Fuerteventura</option>
+<option  value="#">Hierro</option>
+<option  value="#">La Gomera</option>
+<option  value="#">La Palma</option>
+<option  value="#">Lanzarote</option>
+<option  value="#">Lugo</option>
+<option  value="#">Melilla</option>
+</select>
+</div>
+</div>
+</form><!-- .filter-mobile (form) -->
+</div><!-- .sticky-top -->
+</div><!-- #Filter -->
+<!-- Modal Provincias -->
+<div class="modal fade" id="modalProvincias" tabindex="-1" role="dialog" aria-labelledby="modalProvincias" aria-hidden="true">
+<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">por provincia</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<ul>
+<li><a class="text-body" href="#" title="Managers en Madrid">Madrid (226)</a></li>
+<li><a class="text-body" href="#" title="Managers en Barcelona">Barcelona (196)</a></li>
+<li><a class="text-body" href="#" title="Managers en Valencia">Valencia (133)</a></li>
+<li><a class="text-body" href="#" title="Managers en Tarragona">Tarragona (132)</a></li>
+<li><a class="text-body" href="#" title="Managers en Sevilla">Sevilla (129)</a></li>
+<li><a class="text-body" href="#" title="Managers en Girona">Girona (128)</a></li>
+<li><a class="text-body" href="#" title="Managers en Alicante">Alicante (127)</a></li>
+<li><a class="text-body" href="#" title="Managers en A Coruña">A Coruña (126)</a></li>
+<li><a class="text-body" href="#" title="Managers en Zaragoza">Zaragoza (126)</a></li>
+<li><a class="text-body" href="#" title="Managers en Málaga">Málaga (126)</a></li>
+<li><a class="text-body" href="#" title="Managers en Asturias">Asturias (125)</a></li>
+<li><a class="text-body" href="#" title="Managers en Guadalajara">Guadalajara (125)</a></li>
+<li><a class="text-body" href="#" title="Managers en Cádiz">Cádiz (124)</a></li>
+<li><a class="text-body" href="#" title="Managers en Almería">Almería (123)</a></li>
+<li><a class="text-body" href="#" title="Managers en Badajoz">Badajoz (122)</a></li>
+<li><a class="text-body" href="#" title="Managers en Toledo">Toledo (122)</a></li>
+<li><a class="text-body" href="#" title="Managers en Córdoba">Córdoba (121)</a></li>
+<li><a class="text-body" href="#" title="Managers en Avila">Avila (121)</a></li>
+<li><a class="text-body" href="#" title="Managers en Lleida">Lleida (121)</a></li>
+<li><a class="text-body" href="#" title="Managers en Granada">Granada (121)</a></li>
+<li><a class="text-body" href="#" title="Managers en Cantabria">Cantabria (121)</a></li>
+<li><a class="text-body" href="#" title="Managers en Huelva">Huelva (121)</a></li>
+<li><a class="text-body" href="#" title="Managers en Navarra">Navarra (120)</a></li>
+<li><a class="text-body" href="#" title="Managers en Guipúzcoa">Guipúzcoa (120)</a></li>
+<li><a class="text-body" href="#" title="Managers en Álava">Álava (120)</a></li>
+<li><a class="text-body" href="#" title="Managers en Tenerife">Tenerife (120)</a></li>
+<li><a class="text-body" href="#" title="Managers en León">León (119)</a></li>
+<li><a class="text-body" href="#" title="Managers en Las Palmas">Las Palmas (119)</a></li>
+<li><a class="text-body" href="#" title="Managers en Murcia">Murcia (119)</a></li>
+<li><a class="text-body" href="#" title="Managers en Burgos">Burgos (119)</a></li>
+<li><a class="text-body" href="#" title="Managers en Valladolid">Valladolid (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Segovia">Segovia (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Vizcaya">Vizcaya (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Jaén">Jaén (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en La Rioja">La Rioja (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Ciudad Real">Ciudad Real (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Salamanca">Salamanca (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Huesca">Huesca (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Cáceres">Cáceres (118)</a></li>
+<li><a class="text-body" href="#" title="Managers en Cuenca">Cuenca (117)</a></li>
+<li><a class="text-body" href="#" title="Managers en Castellón">Castellón (117)</a></li>
+<li><a class="text-body" href="#" title="Managers en Palencia">Palencia (117)</a></li>
+<li><a class="text-body" href="#" title="Managers en Baleares">Baleares (116)</a></li>
+<li><a class="text-body" href="#" title="Managers en Zamora">Zamora (116)</a></li>
+<li><a class="text-body" href="#" title="Managers en Soria">Soria (116)</a></li>
+<li><a class="text-body" href="#" title="Managers en Albacete">Albacete (116)</a></li>
+<li><a class="text-body" href="#" title="Managers en Pontevedra">Pontevedra (115)</a></li>
+<li><a class="text-body" href="#" title="Managers en Ceuta">Ceuta (114)</a></li>
+<li><a class="text-body" href="#" title="Managers en Teruel">Teruel (114)</a></li>
+<li><a class="text-body" href="#" title="Managers en Ourense">Ourense (114)</a></li>
+<li><a class="text-body" href="#" title="Managers en Fuerteventura">Fuerteventura (113)</a></li>
+<li><a class="text-body" href="#" title="Managers en Hierro">Hierro (113)</a></li>
+<li><a class="text-body" href="#" title="Managers en La Gomera">La Gomera (113)</a></li>
+<li><a class="text-body" href="#" title="Managers en La Palma">La Palma (113)</a></li>
+<li><a class="text-body" href="#" title="Managers en Lanzarote">Lanzarote (113)</a></li>
+<li><a class="text-body" href="#" title="Managers en Lugo">Lugo (113)</a></li>
+<li><a class="text-body" href="#" title="Managers en Melilla">Melilla (113)</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Eventos -->
+<div class="modal fade" id="modalEventos" tabindex="-1" role="dialog" aria-labelledby="modalEventos" aria-hidden="true">
+<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Eventos</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<ul>
+<li><a class="text-body" href="#" title="Managers Eventos">Eventos (119)</a></li>
+<li><a class="text-body" href="#" title="Managers Fiestas">Fiestas (107)</a></li>
+<li><a class="text-body" href="#" title="Managers Celebraciones">Celebraciones (101)</a></li>
+<li><a class="text-body" href="#" title="Managers Conciertos">Conciertos (92)</a></li>
+<li><a class="text-body" href="#" title="Managers Festivales">Festivales (56)</a></li>
+<li><a class="text-body" href="#" title="Managers Boda">Boda (48)</a></li>
+<li><a class="text-body" href="#" title="Managers Fiestas infantiles">Fiestas infantiles (48)</a></li>
+<li><a class="text-body" href="#" title="Managers Fiesta mayor">Fiesta mayor (45)</a></li>
+<li><a class="text-body" href="#" title="Managers Cumpleaños">Cumpleaños (42)</a></li>
+<li><a class="text-body" href="#" title="Managers Ferias">Ferias (33)</a></li>
+<li><a class="text-body" href="#" title="Managers Aniversario">Aniversario (31)</a></li>
+<li><a class="text-body" href="#" title="Managers Comuniones">Comuniones (28)</a></li>
+<li><a class="text-body" href="#" title="Managers Despedidas de soltera">Despedidas de soltera (27)</a></li>
+<li><a class="text-body" href="#" title="Managers Presentaciones">Presentaciones (24)</a></li>
+<li><a class="text-body" href="#" title="Managers Congreso">Congreso (21)</a></li>
+<li><a class="text-body" href="#" title="Managers Pasacalles">Pasacalles (20)</a></li>
+<li><a class="text-body" href="#" title="Managers Banquetes">Banquetes (20)</a></li>
+<li><a class="text-body" href="#" title="Managers Convención">Convención (18)</a></li>
+<li><a class="text-body" href="#" title="Managers Inauguracion">Inauguracion (18)</a></li>
+<li><a class="text-body" href="#" title="Managers Bautizo">Bautizo (18)</a></li>
+<li><a class="text-body" href="#" title="Managers Cena">Cena (16)</a></li>
+<li><a class="text-body" href="#" title="Managers Exposiciones">Exposiciones (14)</a></li>
+<li><a class="text-body" href="#" title="Managers Bienvenida">Bienvenida (11)</a></li>
+<li><a class="text-body" href="#" title="Managers Cóctel">Cóctel (9)</a></li>
+<li><a class="text-body" href="#" title="Managers Fiestas nochevieja">Fiestas nochevieja (9)</a></li>
+<li><a class="text-body" href="#" title="Managers Cruceros">Cruceros (6)</a></li>
+<li><a class="text-body" href="#" title="Managers Recepcion">Recepcion (6)</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- LIST-CONTENT -->
+<div id="content" class="col-12 col-md-9">
+<!-- ARTIST LISTS -->
+<div class="list-group artist-list">
+<div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Santamarta Producciones S.L.">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/sinfoto.gif" alt="Santamarta Producciones S.L." title="Santamarta Producciones S.L." />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Santamarta Producciones S.L." class="name h4">Santamarta Producciones S.L.</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+<img src="//www.unaplauso.com/images/estrella8.gif" width="61px" height="12px" alt="Valoración" />
+</span>
+<p class="description-text">￼SANTAMARTA PRODUCCIONES es una empresa que está formada por un equipo joven y dinámico con una larga trayectoria profesional en el mundo del espectáculo, que en su día, ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Álava, Burgos, Guipúzcoa, León
+</li>
+<li><strong>Tipos de evento:</strong>
+Congreso, Convención, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">Asociación Representantes Técnicos del Espectáculo</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="#" title="managers">managers</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/organizacion-de-eventos_it_c5dd8_tc474_1.html" title="Managers producción de eventos">Managers producción de eventos</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="ActuAr Espectáculos">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/5/5/mt_557_actuar-espectaculos_2.jpg" alt="ActuAr Espectáculos" title="ActuAr Espectáculos" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="ActuAr Espectáculos" class="name h4">ActuAr Espectáculos</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">ActuAr Espect&aacute;culos &ldquo;la agencia art&iacute;stica de las artes Esc&eacute;nicas&rdquo; ofrece un nuevo servicio PARA EMPRESAS Y/O PARTICULARES a precios incre&iacute;bles ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Presentaciones, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/eventos_it_c5dd8_e84_1.html" title="Managers Eventos">Managers Eventos</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/agencias-de-espectaculos_it_c5dd8_t144d8_1.html" title="Managers agencia de espectáculos">Managers agencia de espectáculos</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="JC Produções Musicais ">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/8/8/4/mt_884_logo-jc-producoes-musicais-horizontal-png_33.png" alt="JC Produções Musicais " title="JC Produções Musicais " />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="JC Produções Musicais " class="name h4">JC Produções Musicais </a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">JC Produções Musicais - Graça Silva
+ 
+Exmº (ª) Sr. (ª). É conhecida a relação próxima, se não mesmo inseparável, entre a poesia e o fado. As propostas que apresentamos, ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid, Zamora
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">promotor artístico</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/fiestas_it_c5dd8_e5a_1.html" title="Managers Fiestas">Managers Fiestas</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/representantes-artisticos_it_c5dd8_t144c0_1.html" title="Managers representantes artísticos">Managers representantes artísticos</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Espectáculos Universo">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/5/4/1/mt_145_espectaculos-universo_1.jpg" alt="Espectáculos Universo" title="Espectáculos Universo" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Espectáculos Universo" class="name h4">Espectáculos Universo</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Revistas, variedades, tríos musicales, infantiles, cantantes,
+números visuales, vedette, humoristas, magos de grandes ilusiones, malabares, magos showman...
+Todo lo que puedas ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid, Zaragoza
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Fiesta mayor
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">producción espectáculos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/celebraciones_it_c5dd8_e24_1.html" title="Managers Celebraciones">Managers Celebraciones</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/produccion-espectaculos_it_c5dd8_t144d2_1.html" title="Managers producción espectáculos">Managers producción espectáculos</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Guantanamera - Show">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/3/8/3/mt_383_portada-guantanamera-jpg_56.jpg" alt="Guantanamera - Show" title="Guantanamera - Show" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Guantanamera - Show" class="name h4">Guantanamera - Show</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Espectáculo integral de Artistas cubanos y argentinos.
+Resumen: En Guantanamera se reúnen Orishas, Gauchos, Soneros y Tangueros que juntos o individuales, te harán pasar una ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">produccion musical</span>
+<span class="badge badge-primary" 
+rel="nofollow">artistas famosos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/conciertos_it_c5dd8_e36_1.html" title="Managers Conciertos">Managers Conciertos</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/promotor-artistico_it_c5dd8_t144ba_1.html" title="Managers promoción giras">Managers promoción giras</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Intermusical">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/sinfoto.gif" alt="Intermusical" title="Intermusical" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Intermusical" class="name h4">Intermusical</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Los inicios de INTERMUSICAL, un portal web musical pionero en sus servicios, tuvieron lugar en Junio del año 2009 en la ciudad de Barcelona y por iniciativa de su fundador y promotor ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona
+</li>
+<li><strong>Tipos de evento:</strong>
+Celebraciones, Conciertos, Cumpleaños
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+<span class="badge badge-primary" 
+rel="nofollow">promotor artístico</span>
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/festivales_it_c5dd8_e96_1.html" title="Managers Festivales">Managers Festivales</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/asociacion-representantes-tecnicos-del-espectaculo_it_c5dd8_t144c6_1.html" title="Managers ARTE">Managers ARTE</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="MQ - Contrataciones de Espect">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/2/7/6/mt_276_publicidad-01-jpg_89.jpg" alt="MQ - Contrataciones de Espect" title="MQ - Contrataciones de Espect" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="MQ - Contrataciones de Espect" class="name h4">MQ - Contrataciones de Espect</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">MQ - Contrataciones de Espectáculos
+Es una empresa dedicaca en su plenitud al maravilloso
+mundo de espectáculo, donde de una forma seria y profesional podréis gestionar ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Cádiz, Sevilla
+</li>
+<li><strong>Tipos de evento:</strong>
+Eventos, Fiesta mayor
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/boda_it_c5dd8_e1e_1.html" title="Managers Boda">Managers Boda</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/artistas-famosos_it_c5dd8_t144cc_1.html" title="Managers artistas famosas">Managers artistas famosas</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Deuvede Music">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/4/2/9/mt_924_deuvede-music_1.jpg" alt="Deuvede Music" title="Deuvede Music" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Deuvede Music" class="name h4">Deuvede Music</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Deuvede Music da servicio, asesora y gestiona las necesidades actuales de artistas y grupos musicales durante su trayectoria profesional.
+Nuestra amplia experiencia en el sector ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona
+</li>
+<li><strong>Tipos de evento:</strong>
+Congreso, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">produccion musical</span>
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/fiestas-infantiles_it_c5dd8_e9c_1.html" title="Managers Fiestas infantiles">Managers Fiestas infantiles</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/produccion-musical_it_c5dd8_tbe50_1.html" title="Managers producción musical">Managers producción musical</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="&#x25E2; PUBLICIDAD GUI&Lambda; ...">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/2/0/2/mt_202_icon3-jpg_94.jpg" alt="&#x25E2; PUBLICIDAD GUI&Lambda; ONLIN&Xi; &#x25E3;" title="&#x25E2; PUBLICIDAD GUI&Lambda; ONLIN&Xi; &#x25E3;" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="&#x25E2; PUBLICIDAD GUI&Lambda; ..." class="name h4">&#x25E2; PUBLICIDAD GUI&Lambda; ONLIN&Xi; &#x25E3;</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Buscamos hosteleros y salas de fiestas que necesiten artistas.
+Le invito que lea las biografías y escuche a los artistas que tenemos en cartera: www.guiaonline.es/artistas
+&#x25E2; ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/fiesta-mayor_it_c5dd8_e8a_1.html" title="Managers Fiesta mayor">Managers Fiesta mayor</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/arte_it_c5dd8_t3ab0_1.html" title="Managers ARTE">Managers ARTE</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="La Greska">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/2/8/9/mt_982_la-greska_1.bmp" alt="La Greska" title="La Greska" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="La Greska" class="name h4">La Greska</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Som LA GRESKA que comenci l’espectacle!, una nova agencia dedicada al sector de l'espectacle, en l’actualitat en l'àmbit de representació d'artistes, animació, i organització ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Tarragona
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Presentaciones
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/cumpleanos_it_c5dd8_e48_1.html" title="Managers Cumpleaños">Managers Cumpleaños</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/discografica_it_c5dd8_t500a_1.html" title="Managers sello discográfico">Managers sello discográfico</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Fiestas cuatro enanitos">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/6/7/mt_767_fiestas-cuatro-enanitos_1.jpg" alt="Fiestas cuatro enanitos" title="Fiestas cuatro enanitos" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Fiestas cuatro enanitos" class="name h4">Fiestas cuatro enanitos</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+<img src="//www.unaplauso.com/images/estrella10.gif" width="61px" height="12px" alt="Valoración" />
+</span>
+<p class="description-text">ANIMACIONES INFANTILES CUATRO ENANITOS 
+Asturias, Cantabria, León. 
+Organizamos las mejores fiestas infantiles a domicilio; cumpleaños, comuniones, bodas, todo tipo de ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Asturias, Cantabria
+</li>
+<li><strong>Tipos de evento:</strong>
+Celebraciones, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">producción espectáculos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/ferias_it_c5dd8_e54_1.html" title="Managers Ferias">Managers Ferias</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/payaso_it_c5dd8_t4c02_1.html" title="Managers payaso">Managers payaso</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Crea Espectáculos">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/8/2/0/mt_028_crea-espectaculos_1.jpg" alt="Crea Espectáculos" title="Crea Espectáculos" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Crea Espectáculos" class="name h4">Crea Espectáculos</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+<img src="//www.unaplauso.com/images/estrella10.gif" width="61px" height="12px" alt="Valoración" />
+</span>
+<p class="description-text">Disponemos de todo tipo de espectáculos, para fiestas y eventos;
+Orquestas, payasos, discomovil, magos, monologos, coros rocieros, grupos de jazz, grupos de cuerda, gospel, showmans, ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Tarragona
+</li>
+<li><strong>Tipos de evento:</strong>
+Banquetes, Boda
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/aniversario_it_c5dd8_e6_1.html" title="Managers Aniversario">Managers Aniversario</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/animacion_it_c5dd8_t1620_1.html" title="Managers animador">Managers animador</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Ventilador Music Live">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/6/6/1/mt_166_ventilador-music-contratacion_1.png" alt="Ventilador Music Live" title="Ventilador Music Live" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Ventilador Music Live" class="name h4">Ventilador Music Live</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Ventilador Music es una agencia de representación, contratación, producción y promoción artística fundada en Barcelona en 1995.
+Aunque especialmente dedicados a las Músicas ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiesta mayor, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">Asociación Representantes Técnicos del Espectáculo</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/comuniones_it_c5dd8_e30_1.html" title="Managers Comuniones">Managers Comuniones</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/cuentacuentos_it_c5dd8_t20c4_1.html" title="Managers cuentacuentos">Managers cuentacuentos</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Musiquisima">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/7/5/mt_577_musiquisima_1.png" alt="Musiquisima" title="Musiquisima" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Musiquisima" class="name h4">Musiquisima</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Musiquísima es una empresa gestionada por músicos profesionales con gran experiencia en el concierto y la programación musical. Nuestro punto fuerte es el buen gusto y acertado ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Avila, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/despedidas-de-soltera_it_c5dd8_ea2_1.html" title="Managers Despedidas de soltera">Managers Despedidas de soltera</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/presentaciones_it_c5dd8_e6c_1.html" title="Managers Presentaciones">Managers Presentaciones</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="LA ENERGÍA DEL ESPECTÁCULO">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/2/0/7/mt_207_energia-cuadrado-jpg_65.jpg" alt="LA ENERGÍA DEL ESPECTÁCULO" title="LA ENERGÍA DEL ESPECTÁCULO" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="LA ENERGÍA DEL ESPECTÁCULO" class="name h4">LA ENERGÍA DEL ESPECTÁCULO</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Agencia Productora de Espectáculos, dirigida por Antonio Fernández Arcos y Manuela Cortés Montaño, dos profesionales con una larga y extensa trayectoria profesional, creadores ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Córdoba, Málaga
+</li>
+<li><strong>Tipos de evento:</strong>
+Ferias, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/congreso_it_c5dd8_e3c_1.html" title="Managers Congreso">Managers Congreso</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/pasacalles_it_c5dd8_e90_1.html" title="Managers Pasacalles">Managers Pasacalles</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Orientarte">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/1/5/7/mt_751_orientarte-artistas-orientales_1.jpg" alt="Orientarte" title="Orientarte" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Orientarte" class="name h4">Orientarte</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+<img src="//www.unaplauso.com/images/estrella10.gif" width="61px" height="12px" alt="Valoración" />
+</span>
+<p class="description-text">Orientarte es una empresa joven que se dedica a la distribución de espectáculos de danza y así como el cuarteto Mozart.
+ORIENTARTE
+Distribuidora de Espectáculos
+Creación ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Guadalajara, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/banquetes_it_c5dd8_ec_1.html" title="Managers Banquetes">Managers Banquetes</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/convencion_it_c5dd8_e42_1.html" title="Managers Convención">Managers Convención</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="MACANDÉ">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/1/4/3/mt_143_macandelogo-fw-png_76.png" alt="MACANDÉ" title="MACANDÉ" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="MACANDÉ" class="name h4">MACANDÉ</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Macand&eacute; Promotores y productores de espect&aacute;culos flamencos MACAND&Eacute; es uno de los principales promotores y productores de espect&aacute;culos en el &aacute;mbito ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+<span class="badge badge-primary" 
+rel="nofollow">producción espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/inauguracion_it_c5dd8_e66_1.html" title="Managers Inauguracion">Managers Inauguracion</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/bautizo_it_c5dd8_e12_1.html" title="Managers Bautizo">Managers Bautizo</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Carambola Producciones">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/6/9/mt_769_doble-de-torrente-accion-norton-jpg_82.jpg" alt="Carambola Producciones" title="Carambola Producciones" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Carambola Producciones" class="name h4">Carambola Producciones</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Realizamos todo tipo de fiestas , eventos infantiles tanto para particulares como empresas disponemos de magos, payasos, titeres, teatro infantil, animadores, personajes, etc 
+Organizamos ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid, Toledo
+</li>
+<li><strong>Tipos de evento:</strong>
+Inauguracion, Pasacalles
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">producción espectáculos</span>
+<span class="badge badge-primary" 
+rel="nofollow">agencias de espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/cena_it_c5dd8_e2a_1.html" title="Managers Cena">Managers Cena</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/exposiciones_it_c5dd8_e4e_1.html" title="Managers Exposiciones">Managers Exposiciones</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Comma (Cbia- Arg - Bra)">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/6/0/5/mt_506_comma-colombia_1.jpg" alt="Comma (Cbia- Arg - Bra)" title="Comma (Cbia- Arg - Bra)" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Comma (Cbia- Arg - Bra)" class="name h4">Comma (Cbia- Arg - Bra)</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Comma Colombia es una empresa dedicada al booking & managment de artistas independientes, promoviendo la circulacion y el conocimiento
+Ademas de hacer parte de la Comunidad ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Eventos, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">representantes artísticos</span>
+<span class="badge badge-primary" 
+rel="nofollow">artistas famosos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/bienvenida_it_c5dd8_e18_1.html" title="Managers Bienvenida">Managers Bienvenida</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/coctel_it_c5dd8_e78_1.html" title="Managers Cóctel">Managers Cóctel</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Producciones Jn">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/8/9/9/mt_998_jn-ocio-imagen-y-sonido-sl_1.jpg" alt="Producciones Jn" title="Producciones Jn" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Producciones Jn" class="name h4">Producciones Jn</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+<img src="//www.unaplauso.com/images/estrella8.gif" width="61px" height="12px" alt="Valoración" />
+</span>
+<p class="description-text">Quienes somos? 
+JN Ocio Imagen y Sonido S. L.- una empresa de producción y realización de espectáculos, nueva (nacimos en 2007) pero arrastramos la experiencia de Osuna ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Castellón, Valencia
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Fiestas infantiles
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Managers</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">organización de eventos</span>
+<span class="badge badge-primary" 
+rel="nofollow">producción espectáculos</span>
+</div>
+<div class="similar x-small pl-2">
+<p>
+<strong class="text-muted d-block mt-2">Similar a Managers:</strong>
+<!--<a class="similar-item text-muted" href="#">música latina</a>
+<a class="similar-item text-muted" href="#">música conciertos</a>
+<a class="similar-item text-muted" href="#">música latina grupo merengue</a>-->
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/fiestas-nochevieja_it_c5dd8_e1e0_1.html" title="Managers Fiestas nochevieja">Managers Fiestas nochevieja</a>
+<a class="similar-item text-muted" href="https://www.unaplauso.com/managers/cruceros_it_c5dd8_ea8_1.html" title="Managers Cruceros">Managers Cruceros</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>                                                     
+</div><!-- .artist-list -->
+<!-- PAGINATION -->
+<div class="d-flex justify-content-center mt-4">
+<nav aria-label="artist-pagination">
+<!--<ul class="pagination">
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Previous">
+<span aria-hidden="true">&laquo;</span>
+</a>
+</li>
+<li class="page-item"><a class="page-link" href="#">1</a></li>
+<li class="page-item active"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Next">
+<span aria-hidden="true">&raquo;</span>
+</a>
+</li>
+</ul>-->
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" rel="nofollow" href="{% url 'basic_app:managerone' %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <li class="page-item "><a class="page-link" rel="follow" rel="nofollow" href="{% url 'basic_app:managerone' %}">1</a></li>
+    <li class="page-item active"><a class="page-link" rel="follow"  href="{% url 'basic_app:managertwo' %}">2</a></li>
+    <li class="page-item"><a class="page-link" rel="nofollow" href="{% url 'basic_app:managerone' %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+
+</ul>
+</nav>
+</div>
+</div><!-- #content -->
+</div><!-- .row -->
+</div><!-- .container -->
+<footer class="page-footer">
+<div class="container">
+<div class="clearfix text-center">
+<ul class="float-lg-left list-inline footer-links">
+    <li class='list-inline-item'><a href="{% url 'basic_app:about' %}">Quiénes Somos</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:faq' %}">Preguntas frecuentes</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:contact' %}">Contacto</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:legal' %}">Condiciones legales</a></li>
+<li class='list-inline-item'><a href='http://quenoparelafiesta.es/' target='_blank'>#QueNoPareLaFiesta</a></li>
+</ul>
+<ul class="float-lg-right list-inline share-icons mt-4 mt-lg-0">
+<li class="list-inline-item share-icon"><a href="https://www.facebook.com/pages/unAplauso/41439617363" target="_blank"><img width="24" height="24" alt="facebook" src="//www.unaplauso.com/img/ua2.5-icons/social/Facebook.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://twitter.com/#!/unAplauso_es" target="_blank"><img width="24" height="24" alt="twitter" src="//www.unaplauso.com/img/ua2.5-icons/social/Twitter.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://www.instagram.com/unaplauso.es/" target="_blank"><img width="24" height="24" alt="instagram" src="//www.unaplauso.com/img/ua2.5-icons/social/Instagram.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://www.linkedin.com/company/unaplauso.com/" target="_blank"><img width="24" height="24" alt="linkedIn" src="//www.unaplauso.com/img/ua2.5-icons/social/LinkedIn.svg" /></a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>   
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/scripts.js"></script>
+</body>
+</html>

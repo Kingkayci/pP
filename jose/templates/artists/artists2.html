@@ -1,0 +1,1232 @@
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dj pP Artista</title>
+    <meta name="description" content="Contratación de artistas. Directorio de artistas. Contrata todo tipo de artistas. Contratación de artistas " />
+    <meta name="keywords" content="contratacion artistas, contratacion cantantes, contratación artistas, contratación cantantes, grupos de musica, contratación de grupos de musica,espectáculo,espectáculo,espectaculos,espectaculo,música,musica,musica urbana,musica popular,estilos musicales,teatro,fiesta,payasos,magos " />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Roboto:400,400i,700,900" rel="stylesheet">
+    <script>
+        
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-788438-1', 'auto');ga('send', 'pageview');
+        </script>
+</head>
+<body>
+<header class="fixed-top">
+<div class="max-width mx-auto">
+<nav class="navbar navbar-expand-md">
+<div class="text-hide position-absolute">Dj pP</div>
+<a class="navbar-brand" href="{% url 'basic_app:home' %}">Dj pP <br>!QUE NO PARE LA FIESTA! <i class="fa-solid fa-music"></i></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a class="edit-user nav-link" href="{% url 'basic_app:home' %}" target="_blank">Hogar</a>
+        </li>
+<li class="nav-item dropdown">
+<a class="edit-user nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artistas <span>+</span></a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<a class="dropdown-item" href="{% url 'basic_app:artistone' %}" >Artistas</a>
+<a class="dropdown-item" href="{% url 'basic_app:managerone' %}" >Managers</a>
+</div>   
+</li>
+
+<li class="nav-item">
+<a class="edit-user nav-link" href="https://quenoparelafiesta.es" target="_blank">Blog</a>
+</li>
+<li class="nav-item dropdown menu-language">
+<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-es" style="vertical-align: middle">ESP</span></a>
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+<div class="d-flex flex-row flex-wrap flags">
+<a class="flag-container" href="#"><span class="flag-icon flag-es">ES</span></a>
+<a class="flag-container" href="#"><span class="flag-icon flag-en">GB</span></a>
+<a class="flag-container" href="//www.einapplaus.de/"><span class="flag-icon flag-de">DE</span></a>
+<a class="flag-container" href="//www.unaplauso.com/ve/"><span class="flag-icon flag-ve">VE</span></a>
+<a class="flag-container" href="//www.unaplauso.com/uy/"><span class="flag-icon flag-uy">UY</span></a>
+<a class="flag-container" href="//www.einapplaus.de/ch/"><span class="flag-icon flag-ch">CH</span></a>
+<a class="flag-container" href="//www.unaplauso.com/pe/"><span class="flag-icon flag-pe">PE</span></a>
+<a class="flag-container" href="//www.unaplauso.com/py/"><span class="flag-icon flag-py">PY</span></a>
+<a class="flag-container" href="//www.unaplauso.com.mx/"><span class="flag-icon flag-mx">MX</span></a>
+<a class="flag-container" href="//www.unaplauso.com/cr/"><span class="flag-icon flag-cr">CR</span></a>
+<a class="flag-container" href="//www.unaplauso.com/co/"><span class="flag-icon flag-co">CO</span></a>
+<a class="flag-container" href="//www.unaplauso.com/cl/"><span class="flag-icon flag-cl">CL</span></a>
+<a class="flag-container" href="//www.unaplauso.com/bo/"><span class="flag-icon flag-bo">BO</span></a>
+<a class="flag-container" href="//www.einapplaus.de/at/"><span class="flag-icon flag-at">AT</span></a>
+<a class="flag-container" href="//www.unaplauso.com/ar/"><span class="flag-icon flag-ar">AR</span></a>
+</div>
+</div>   
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</header> <br> <br> <br>
+<div id="page-list" class="container py-4 position-relative">
+<div id="list-header" class="row no-gutters align-items-start mb-4">
+
+<div class="row no-gutters">
+<!-- FILTER -->
+<div id="filter" class="col-12 col-md-3 pr-md-2 mb-3">
+<div class="sticky-top">
+<h5 class="text-muted mb-3">Filtrar resultados</h5>
+<div class="filter-desktop d-none d-md-flex flex-md-column">
+<div class="filter-category flex-fill">            
+    <h6>por categoría</h6>
+    <ul class="list-unstyled sublist-filter small">
+    <li><strong class="sublist-title text-primary">Teatro, Danza y fiesta</strong>
+    <ul class="list-unstyled">
+    <li><a href="#">Teatro (2355)</a></li>
+    <li><a href="#">Mago (872)</a></li>
+    <li><a href="#">Payaso (846)</a></li>
+    <li><a href="#">Fiesta popular (262)</a></li>
+    <li><a href="#">Circo (316)</a></li>
+    <li><a href="#">Humorista (476)</a></li>
+    <li><a href="#">Danza (486)</a></li>
+    <li><a href="#">Animación (927)</a></li>
+    <li><a href="#">Conferenciantes (18)</a></li>
+    </ul>
+    </li>
+    <li><strong class="sublist-title text-primary">Grupos de música</strong>
+    <ul class="list-unstyled">
+    <li><a href="#">Grupos de Jazz (982)</a></li>
+    <li><a href="#">Grupos de Rock (1487)</a></li>
+    <li><a href="#">Grupos de Folk (402)</a></li>
+    <li><a href="#">Grupos de Heavy (179)</a></li>
+    <li><a href="#">Grupos de Hip Hop (229)</a></li>
+    <li><a href="#">Reggae (115)</a></li>
+    <li><a href="#">Grupos de Ska (96)</a></li>
+    <li><a href="#">DJ (1025)</a></li>
+    </ul>
+    </li>
+    <li><strong class="sublist-title text-primary">Música para ocasiones</strong>
+    <ul class="list-unstyled">
+    <li><a href="#">Música latina (438)</a></li>
+    <li><a href="#">Flamenco (731)</a></li>
+    <li><a href="#">Orquesta (1141)</a></li>
+    <li><a href="#">Regional (237)</a></li>
+    <li><a href="#">Mariachi (628)</a></li>
+    <li><a href="#">Tuna (178)</a></li>
+    <li><a href="#">Cantautor (405)</a></li>
+    <li><a href="#">Música étnica (127)</a></li>
+    <li><a href="#">Música clásica (904)</a></li>
+    <li><a href="#">Bandas de música (572)</a></li>
+    <li><a href="#">Coral (314)</a></li>
+    <li><a href="#">Habaneras (61)</a></li>
+    <li><a href="#">Pequeño formato (159)</a></li>
+    </ul>
+    </li>
+    </ul>
+    </div>
+    <div class="filter-category flex-fill mt-md-1">
+    <h6>por tipo de evento</h6>
+    <ul class="list-unstyled list-filter small">
+    <li><a href="#">Fiestas (4787)</a></li>
+    <li><a href="#">Eventos (4693)</a></li>
+    <li><a href="#">Boda (4628)</a></li>
+    <li><a href="#">Celebraciones (4356)</a></li>
+    <li><a href="#">Conciertos (3887)</a></li>
+    <li><a href="#">Festivales (3131)</a></li>
+    <li class="mt-1"><a href="#" class="text-info" data-toggle="modal" data-target="#modalEventos">[+] más eventos</a></li>
+    </ul>
+    </div>
+    <div class="filter-category flex-fill mt-md-1">
+    <h6>por provincia</h6>
+    <ul class="list-unstyled list-filter small">
+    <li><a href="#">Barcelona (7294)</a></li>
+    <li><a href="#">Madrid (7165)</a></li>
+    <li><a href="#">Sevilla (5077)</a></li>
+    <li><a href="#">Girona (5045)</a></li>
+    <li><a href="#">Valencia (4898)</a></li>
+    <li><a href="#">Alicante (4661)</a></li>
+    <li class="mt-1"><a href="#" class="text-info" data-toggle="modal" data-target="#modalProvincias">[+] más provincias</a></li>
+    </ul>
+    </div>
+    </div><!-- .filter-desktop -->
+    <form class="filter-mobile d-block d-md-none" method="post">
+    <div class="row no-gutters">
+    <div class="col-xs-12 col-sm-4 px-1">
+    <select name="searchTipoCategoria" id="searchTipoCategoria" class="select custom-select mb-1 col-12">
+    <option value="" selected disabled>
+    -- Por categoría
+    </option>
+    <optgroup label="Teatro, Danza y fiesta">
+    <option  value="https://www.unaplauso.com/teatro_it_c270c_1.html">Teatro</option>
+    <option  value="https://www.unaplauso.com/mago_it_c2712_1.html">Mago</option>
+    <option  value="https://www.unaplauso.com/payaso_it_c2718_1.html">Payaso</option>
+    <option  value="https://www.unaplauso.com/fiesta-popular_it_c271e_1.html">Fiesta popular</option>
+    <option  value="https://www.unaplauso.com/circo_it_c2724_1.html">Circo</option>
+    <option  value="https://www.unaplauso.com/humoristas_it_c272a_1.html">Humorista</option>
+    <option  value="https://www.unaplauso.com/danza_it_c2736_1.html">Danza</option>
+    <option  value="https://www.unaplauso.com/animacion_it_c5dd2_1.html">Animación</option>
+    <option  value="https://www.unaplauso.com/Conferenciantes_it_c276c_1.html">Conferenciantes</option>
+    </optgroup>
+    <optgroup label="Grupos de música">
+    <option  value="https://www.unaplauso.com/grupos-de-jazz_it_c265e_1.html">Grupos de Jazz</option>
+    <option  value="https://www.unaplauso.com/grupos-de-rock_it_c2670_1.html">Grupos de Rock</option>
+    <option  value="https://www.unaplauso.com/grupos-de-folk_it_c2676_1.html">Grupos de Folk</option>
+    <option  value="https://www.unaplauso.com/grupos-de-heavy_it_c267c_1.html">Grupos de Heavy</option>
+    <option  value="https://www.unaplauso.com/grupos-de-hiphop_it_c26e8_1.html">Grupos de Hip Hop</option>
+    <option  value="https://www.unaplauso.com/reggae_it_c26fa_1.html">Reggae</option>
+    <option  value="https://www.unaplauso.com/grupos-de-ska_it_c2706_1.html">Grupos de Ska</option>
+    <option  value="https://www.unaplauso.com/dj_it_c274e_1.html">DJ</option>
+    </optgroup>
+    <optgroup label="Música para ocasiones">
+    <option  value="https://www.unaplauso.com/musica-latina_it_c5dc6_1.html">Música latina</option>
+    <option  value="https://www.unaplauso.com/flamenco_it_c26be_1.html">Flamenco</option>
+    <option  value="https://www.unaplauso.com/orquesta_it_c26c4_1.html">Orquesta</option>
+    <option  value="https://www.unaplauso.com/regional_it_c26ca_1.html">Regional</option>
+    <option  value="https://www.unaplauso.com/mariachi_it_c26d0_1.html">Mariachi</option>
+    <option  value="https://www.unaplauso.com/tuna_it_c26d6_1.html">Tuna</option>
+    <option  value="https://www.unaplauso.com/cantautor_it_c26dc_1.html">Cantautor</option>
+    <option  value="https://www.unaplauso.com/musica-etnica_it_c26e2_1.html">Música étnica</option>
+    <option  value="https://www.unaplauso.com/musica-clasica_it_c2730_1.html">Música clásica</option>
+    <option  value="https://www.unaplauso.com/bandas-de-musica_it_c2766_1.html">Bandas de música</option>
+    <option  value="https://www.unaplauso.com/coral_it_c5de4_1.html">Coral</option>
+    <option  value="https://www.unaplauso.com/habaneras_it_c1485c_1.html">Habaneras</option>
+    <option  value="https://www.unaplauso.com/pequeno-formato_it_c2772_1.html">Pequeño formato</option>
+    </optgroup>
+    </select>
+    </div>
+    <div class="col-xs-12 col-sm-4 px-1">
+    <select name="searchTipoEvento" id="searchTipoEvento" class="select custom-select mb-1">
+    <option value="" selected disabled>
+    -- Por tipo de evento
+    </option>
+    <option  value="">Fiestas</option>
+    <option  value="">Eventos</option>
+    <option  value="">Boda</option>
+    <option  value="">Celebraciones</option>
+    <option  value="">Conciertos</option>
+    <option  value="">Festivales</option>
+    <option  value="">Cumpleaños</option>
+    <option  value="">Fiesta mayor</option>
+    <option  value="">Comuniones</option>
+    <option  value="">Fiestas infantiles</option>
+    <option  value="">Ferias</option>
+    <option  value="">Aniversario</option>
+    <option  value="">Banquetes</option>
+    <option  value="">Cena</option>
+    <option  value="">Bautizo</option>
+    <option  value="">Despedidas de soltera</option>
+    <option  value="">Cóctel</option>
+    <option  value="">Presentaciones</option>
+    <option  value="">Pasacalles</option>
+    <option  value="">Congreso</option>
+    <option  value="">Convención</option>
+    <option  value="">Inauguracion</option>
+    <option  value="">Cruceros</option>
+    <option  value="">Fiestas nochevieja</option>
+    <option  value="">Exposiciones</option>
+    <option  value="">Bienvenida</option>
+    <option  value="">Recepcion</option>
+    <option  value="">Funeral</option>
+    </select>
+    </div>
+    <div class="col-xs-12 col-sm-4 px-1">
+    <select name="searchTipoProv" id="searchTipoProv" class="select custom-select">
+    <option value="" selected disabled>
+    -- Por Provincia
+    </option>
+    </select>
+    </div>
+    </div>
+    </form><!-- .filter-mobile (form) -->
+    </div><!-- .sticky-top -->
+    </div><!-- #Filter -->
+    <!-- Modal Provincias -->
+    <div class="modal fade" id="modalProvincias" tabindex="-1" role="dialog" aria-labelledby="modalProvincias" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Provincias</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <ul>
+    <li><a class="text-body" href="#">Barcelona (7294)</a></li>
+    <li><a class="text-body" href="#">Madrid (7165)</a></li>
+    <li><a class="text-body" href="#">Sevilla (5077)</a></li>
+    <li><a class="text-body" href="#">Girona (5045)</a></li>
+    <li><a class="text-body" href="#">Valencia (4898)</a></li>
+    <li><a class="text-body" href="#">Alicante (4661)</a></li>
+    <li><a class="text-body" href="#">Tarragona (4600)</a></li>
+    <li><a class="text-body" href="#">Málaga (4574)</a></li>
+    <li><a class="text-body" href="#">Lleida (4451)</a></li>
+    <li><a class="text-body" href="#">A Coruña (4429)</a></li>
+    <li><a class="text-body" href="#">Cádiz (4324)</a></li>
+    <li><a class="text-body" href="#">Toledo (4318)</a></li>
+    <li><a class="text-body" href="#">Granada (4269)</a></li>
+    <li><a class="text-body" href="#">Murcia (4204)</a></li>
+    <li><a class="text-body" href="#">Badajoz (4196)</a></li>
+    <li><a class="text-body" href="#">Huelva (4154)</a></li>
+    <li><a class="text-body" href="#">Córdoba (4133)</a></li>
+    <li><a class="text-body" href="#">Castellón (4090)</a></li>
+    <li><a class="text-body" href="#">Valladolid (4079)</a></li>
+    <li><a class="text-body" href="#">Zaragoza (4045)</a></li>
+    <li><a class="text-body" href="#">Álava (4037)</a></li>
+    <li><a class="text-body" href="#">Guadalajara (4024)</a></li>
+    <li><a class="text-body" href="#">Almería (3986)</a></li>
+    <li><a class="text-body" href="#">Avila (3971)</a></li>
+    <li><a class="text-body" href="#">Pontevedra (3968)</a></li>
+    <li><a class="text-body" href="#">Segovia (3957)</a></li>
+    <li><a class="text-body" href="#">Asturias (3952)</a></li>
+    <li><a class="text-body" href="#">Vizcaya (3944)</a></li>
+    <li><a class="text-body" href="#">Albacete (3923)</a></li>
+    <li><a class="text-body" href="#">Jaén (3916)</a></li>
+    <li><a class="text-body" href="#">Salamanca (3907)</a></li>
+    <li><a class="text-body" href="#">Ciudad Real (3904)</a></li>
+    <li><a class="text-body" href="#">Cáceres (3902)</a></li>
+    <li><a class="text-body" href="#">León (3898)</a></li>
+    <li><a class="text-body" href="#">Las Palmas (3888)</a></li>
+    <li><a class="text-body" href="#">Tenerife (3885)</a></li>
+    <li><a class="text-body" href="#">Cantabria (3867)</a></li>
+    <li><a class="text-body" href="#">Baleares (3852)</a></li>
+    <li><a class="text-body" href="#">Burgos (3839)</a></li>
+    <li><a class="text-body" href="#">Zamora (3838)</a></li>
+    <li><a class="text-body" href="#">Lugo (3838)</a></li>
+    <li><a class="text-body" href="#">Cuenca (3831)</a></li>
+    <li><a class="text-body" href="#">Navarra (3823)</a></li>
+    <li><a class="text-body" href="#">Guipúzcoa (3810)</a></li>
+    <li><a class="text-body" href="#">Huesca (3810)</a></li>
+    <li><a class="text-body" href="#">Ourense (3806)</a></li>
+    <li><a class="text-body" href="#">Teruel (3806)</a></li>
+    <li><a class="text-body" href="#">La Rioja (3783)</a></li>
+    <li><a class="text-body" href="#">Palencia (3775)</a></li>
+    <li><a class="text-body" href="#">Soria (3749)</a></li>
+    <li><a class="text-body" href="#">Ceuta (3674)</a></li>
+    <li><a class="text-body" href="#">Fuerteventura (3670)</a></li>
+    <li><a class="text-body" href="#">Lanzarote (3666)</a></li>
+    <li><a class="text-body" href="#">Hierro (3657)</a></li>
+    <li><a class="text-body" href="#">Melilla (3656)</a></li>
+    <li><a class="text-body" href="#">La Gomera (3655)</a></li>
+    <li><a class="text-body" href="#">La Palma (3654)</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Modal Eventos -->
+    <div class="modal fade" id="modalEventos" tabindex="-1" role="dialog" aria-labelledby="modalEventos" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Eventos</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <ul>
+    <li><a class="text-body" href="" title="">Fiestas (4787)</a></li>
+    <li><a class="text-body" href="" title="">Eventos (4693)</a></li>
+    <li><a class="text-body" href="" title="">Boda (4628)</a></li>
+    <li><a class="text-body" href="" title="">Celebraciones (4356)</a></li>
+    <li><a class="text-body" href="" title="">Conciertos (3887)</a></li>
+    <li><a class="text-body" href="" title="">Festivales (3131)</a></li>
+    <li><a class="text-body" href="" title="">Cumpleaños (2416)</a></li>
+    <li><a class="text-body" href="" title="">Fiesta mayor (2163)</a></li>
+    <li><a class="text-body" href="" title="">Comuniones (1976)</a></li>
+    <li><a class="text-body" href="" title="">Fiestas infantiles (1878)</a></li>
+    <li><a class="text-body" href="" title="">Ferias (1560)</a></li>
+    <li><a class="text-body" href="" title="">Aniversario (1289)</a></li>
+    <li><a class="text-body" href="" title="">Banquetes (1097)</a></li>
+    <li><a class="text-body" href="" title="">Cena (1069)</a></li>
+    <li><a class="text-body" href="" title="">Bautizo (1007)</a></li>
+    <li><a class="text-body" href="" title="">Despedidas de soltera (928)</a></li>
+    <li><a class="text-body" href="" title="">Cóctel (883)</a></li>
+    <li><a class="text-body" href="" title="">Presentaciones (857)</a></li>
+    <li><a class="text-body" href="" title="">Pasacalles (835)</a></li>
+    <li><a class="text-body" href="" title="">Congreso (734)</a></li>
+    <li><a class="text-body" href="" title="">Convención (702)</a></li>
+    <li><a class="text-body" href="" title="">Inauguracion (635)</a></li>
+    <li><a class="text-body" href="" title="">Cruceros (513)</a></li>
+    <li><a class="text-body" href="" title="">Fiestas nochevieja (477)</a></li>
+    <li><a class="text-body" href="" title="">Exposiciones (448)</a></li>
+    <li><a class="text-body" href="" title="">Bienvenida (426)</a></li>
+    <li><a class="text-body" href="" title="">Recepcion (255)</a></li>
+    <li><a class="text-body" href="" title="">Funeral (119)</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+<!-- LIST-CONTENT -->
+<div id="content" class="col-12 col-md-9">
+<!-- ARTIST LISTS -->
+<div class="list-group artist-list">
+<div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="DUO NAPA">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/sinfoto.gif" alt="DUO NAPA" title="DUO NAPA" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="DUO NAPA" class="name h4">DUO NAPA</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Somos un Dúo musical que ambientamos eventos cenas bodas con canciones de artistas como Raphael Serrat Julio Iglesias Camilo Sesto Sergio, tenemos también un amplio repertorio ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Lleida
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Celebraciones
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Pequeño formato</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">musical</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Grupo flamenco">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/3/9/3/mt_393_20190309_225422-jpg_92.jpg" alt="Grupo flamenco" title="Grupo flamenco" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Grupo flamenco" class="name h4">Grupo flamenco</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Grupo flamenco. El mejor flamenquito fusión con popurrís divertidos de estopa, raphael, Rosalía, el barrio, pop ochentero, rumbitas, siempre así y un largo etc. Precios sin ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Huelva, Sevilla
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Comuniones
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Teatro</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">musical</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="conjunto tradicion cariñosa">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/4/8/6/mt_486_fofoto-guapa-jpg_87.jpg" alt="conjunto tradicion cariñosa" title="conjunto tradicion cariñosa" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="conjunto tradicion cariñosa" class="name h4">conjunto tradicion cariñosa</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Conjunto Tradición Cariñosa
+Para eventos nacionales e internacionales, festivales, conciertos, etc
+Cultivamos géneros musicales como son montuno, salsa, latin jazz entre ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Música latina</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">baile</span>
+<span class="badge badge-primary" 
+rel="nofollow">salsa</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Bad Members - Rock Covers">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/2/8/8/mt_288_img_8233666-jpg_85.jpg" alt="Bad Members - Rock Covers" title="Bad Members - Rock Covers" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Bad Members - Rock Covers" class="name h4">Bad Members - Rock Covers</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+<img src="//www.unaplauso.com/images/estrella10.gif" width="61px" height="12px" alt="Valoración" />
+</span>
+<p class="description-text">Bienvenidos a la energía y la pasión de "Bad Members", una banda con base en Sevilla, lista para convertir tu evento en una experiencia inolvidable.
+Conformada por cuatro músicos ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Málaga, Sevilla
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Grupos de Rock</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">versiones</span>
+<span class="badge badge-primary" 
+rel="nofollow">Tribute Band</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Cristián Flores Mago Málaga">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/9/8/7/mt_987_foto-mago-cristian-flores-baja-jpg_59.jpg" alt="Cristián Flores Mago Málaga" title="Cristián Flores Mago Málaga" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Cristián Flores Mago Málaga" class="name h4">Cristián Flores Mago Málaga</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Mi propuesta de magia propone un lenguaje de ilusión, clown e improvisación, con el objetivo de crear un universo de risas, magia y asombro, logrando así unas intervenciones ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Málaga
+</li>
+<li><strong>Tipos de evento:</strong>
+Comuniones
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Mago</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">infantil</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="¿FIESTA? LO QUE BUSCAS ES XAR">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/0/9/8/mt_098_whatsapp-image-2023-09-18-at-17-19-44-2-jpeg_69.jpeg" alt="¿FIESTA? LO QUE BUSCAS ES XAR" title="¿FIESTA? LO QUE BUSCAS ES XAR" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="¿FIESTA? LO QUE BUSCAS ES XAR" class="name h4">¿FIESTA? LO QUE BUSCAS ES XAR</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Somos un grupo de músicos experimentados en la animación musical de cualquier tipo de evento. ¿Quieres cantar? Nosotros te acompañamos. ¿Quieres bailar? Ponemos nuestra música ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid, Valencia
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Bandas de música</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">charanga</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Roger Herrera Dj">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/6/2/7/mt_627_roger-foto-sport-11-riviera-jpg_30.jpg" alt="Roger Herrera Dj" title="Roger Herrera Dj" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Roger Herrera Dj" class="name h4">Roger Herrera Dj</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">-Dj productor profesional, música de los 70, 80, 90 y actual. 
+-Dj residente en diferentes discotecas en Argentina.
+-Fundador de la primera escuela de Dj Lequipe.
+-Conductor ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Cádiz, Málaga
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>DJ</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">pinchadiscos</span>
+<span class="badge badge-primary" 
+rel="nofollow">con iluminación</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="musica latina con acento cuban">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/4/4/5/mt_445_raices-cubanas-foto-jpg_39.jpg" alt="musica latina con acento cuban" title="musica latina con acento cuban" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="musica latina con acento cuban" class="name h4">musica latina con acento cuban</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Duo o trio de musica latina, e internacional para bailar con acento cubano.</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Baleares
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas nochevieja
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Pequeño formato</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">trio</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="CARRETERA 80">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/4/5/mt_745_img-20230624-wa0000-jpg_16.jpg" alt="CARRETERA 80" title="CARRETERA 80" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="CARRETERA 80" class="name h4">CARRETERA 80</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">CARRETERA 80. Grupo tributo al pop-rock en castellano se ofrece para tocar. Si tienes alguna boda, cumpleaños, aniversario, o bien son las fiestas de tu pueblo de tu barrio, para ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Baleares, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Grupos de Rock</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">pop</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="LA FIESTA ROCK. La banda más ">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/1/1/mt_711_whatsapp-image-2023-02-25-at-16-16-29-jpeg_6.jpeg" alt="LA FIESTA ROCK. La banda más " title="LA FIESTA ROCK. La banda más " />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="LA FIESTA ROCK. La banda más " class="name h4">LA FIESTA ROCK. La banda más </a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">La Fiesta Rock es un power trío que trae de vuelta el espíritu más entretenido y animado de las canciones rock de todos los tiempos.
+Una banda para pasárselo bien, moverse ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid, Toledo
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Grupos de Rock</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">versiones</span>
+<span class="badge badge-primary" 
+rel="nofollow">pop</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Cover Me Up">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/9/3/3/mt_933_project_image_ba4f1bf7af-jpeg_48.jpeg" alt="Cover Me Up" title="Cover Me Up" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Cover Me Up" class="name h4">Cover Me Up</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Banda de versiones para amenizar bodas y eventos con las mejores versiones de pop-rock español e internacional desde los 80 hasta la actualidad. Cover Me Up cuenta con un amplio ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Ciudad Real, Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Grupos de Rock</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">versiones</span>
+<span class="badge badge-primary" 
+rel="nofollow">pop</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Bloco do Baliza en concierto: ">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/0/1/9/mt_019_01--cartel-sala-shoko-2023-final-sin-redes-jpg_93.jpg" alt="Bloco do Baliza en concierto: " title="Bloco do Baliza en concierto: " />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Bloco do Baliza en concierto: " class="name h4">Bloco do Baliza en concierto: </a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Celebramos el 20 aniversario de Bloco do Baliza, la Escuela de Samba y Batucada!!
+Únete a nosotros en una noche de música y baile en la Sala Shoko de Madrid. Disfrutarás de ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Madrid
+</li>
+<li><strong>Tipos de evento:</strong>
+Conciertos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Bandas de música</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">batucada</span>
+<span class="badge badge-primary" 
+rel="nofollow">samba</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Marlene Grupo de Versiones">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/sinfoto.gif" alt="Marlene Grupo de Versiones" title="Marlene Grupo de Versiones" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Marlene Grupo de Versiones" class="name h4">Marlene Grupo de Versiones</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">¡Canta y baila con nosotros todos los grandes éxitos POP e INDIE en Español de tus bandas favoritas! 
+¿Buscas un grupo de Versiones?
+Con más de 2 horas de repertorio, ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Alicante, Murcia
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Pequeño formato</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">musical</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Los Mejores Artistas para tu E">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/6/2/0/mt_620_la-esencia-del-loco-web-jpg_20.jpg" alt="Los Mejores Artistas para tu E" title="Los Mejores Artistas para tu E" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Los Mejores Artistas para tu E" class="name h4">Los Mejores Artistas para tu E</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">¿ Estás buscando que tu evento sea inolvidable y que la gente lo disfrute y lo recuerde siempre? Entonces necesitas añadirle la música de nuestro elenco de artistas, que harán ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Alicante, Murcia
+</li>
+<li><strong>Tipos de evento:</strong>
+Celebraciones, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Grupos de Rock</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">versiones</span>
+<span class="badge badge-primary" 
+rel="nofollow">pop</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="IVANTXU">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/1/4/9/mt_149_ivantxu-1-jpg_71.jpg" alt="IVANTXU" title="IVANTXU" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="IVANTXU" class="name h4">IVANTXU</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Llevo desde los 15 años en el mundillo del dj, aunque en verdad, escuchando música electrónica...desde antes de nacer. Desde niño ya empecé a interesarme por la figura del ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Huesca, Zaragoza
+</li>
+<li><strong>Tipos de evento:</strong>
+Fiestas, Eventos
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>DJ</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">pinchadiscos</span>
+<span class="badge badge-primary" 
+rel="nofollow">electrónica</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Música para bodas y eventos">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/0/5/mt_705_exteriores-6-jpg_99.jpg" alt="Música para bodas y eventos" title="Música para bodas y eventos" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Música para bodas y eventos" class="name h4">Música para bodas y eventos</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Si estás buscando música para tu boda, este es tu grupo. El quinteto Sinergia se encargará de que todo vaya bien el día de tu ceremonia, cuéntales cual es tu música favorita ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Córdoba, Sevilla
+</li>
+<li><strong>Tipos de evento:</strong>
+Banquetes, Boda
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Música clásica</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">instrumental</span>
+<span class="badge badge-primary" 
+rel="nofollow">música barroca</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Música para bodas y eventos">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/2/2/5/mt_225_exteriores-11-jpg_41.jpg" alt="Música para bodas y eventos" title="Música para bodas y eventos" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Música para bodas y eventos" class="name h4">Música para bodas y eventos</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Si estás buscando música para tu boda, este es tu grupo. El quinteto Sinergia se encargará de que todo vaya bien el día de tu ceremonia, cuéntales cual es tu música favorita ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Málaga, Sevilla
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Cóctel
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Orquesta</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">cuarteto</span>
+<span class="badge badge-primary" 
+rel="nofollow">musicos</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="DJ Bodas y Eventos - MALAGA y G...">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/sinfoto.gif" alt="DJ Bodas y Eventos - MALAGA y GRANADA" title="DJ Bodas y Eventos - MALAGA y GRANADA" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="DJ Bodas y Eventos - MALAGA y G..." class="name h4">DJ Bodas y Eventos - MALAGA y GRANADA</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Karlos Dj es un reconocido profesional de eventos con amplia trayectoria en el mundo de Bodas tanto en Granada como Málaga. Presta sus servicios igualmente en las provincias de ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Granada, Málaga
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Cumpleaños
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>DJ</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">baile</span>
+<span class="badge badge-primary" 
+rel="nofollow">discomovil</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Duo Chocolate">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/7/7/5/mt_775_cartel-a3-del-duo-para-locales-solo-buena-musica-jpg_82.jpg" alt="Duo Chocolate" title="Duo Chocolate" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Duo Chocolate" class="name h4">Duo Chocolate</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Contamos con 3 tipos de repertorios de música en directo 
+Musica Latina (Cubana, Bossa novas, Reggae, Reggaeton, Merengues, Bachata)
+Musica Jazz Standards 50, 60 Instrumental ...</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Granada, Málaga
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Fiestas
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>Música latina</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">salsa</span>
+<span class="badge badge-primary" 
+rel="nofollow">dúo</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                            <div class="artista list-group-item">
+<div class="d-flex flex-row">
+<div class="col-profile pr-3">
+<a class="d-block position-relative" href="#" title="Dj y cantante">
+<!--<span class="artist-badge red"></span>-->
+<img class="img-profile rounded" src="//www.unaplauso.com/images/anuncios/sinfoto.gif" alt="Dj y cantante" title="Dj y cantante" />
+</a>
+<!--<a href="#" class="d-none d-sm-block text-center link-phone small mt-1">Ver teléfono</a>-->
+</div>
+<div class="col-text pr-2 flex-grow-1">
+<a href="#" title="Dj y cantante" class="name h4">Dj y cantante</a>
+<span class="ratings" style="vertical-align: middle">
+<!--<i class="star star-1 full"></i>
+<i class="star star-2 full"></i>
+<i class="star star-3 full"></i>
+<i class="star star-4 full"></i>
+<i class="star star-5 outlined"></i>-->
+</span>
+<p class="description-text">Tengo equipo propio completo para hacer 2 espacios(ejemplo recepción cocktail y sala de fiesta)</p>
+<ul class="small info-text list-unstyled">
+<li><strong>Actúa en:</strong>
+Barcelona, Sevilla
+</li>
+<li><strong>Tipos de evento:</strong>
+Boda, Festivales
+</li>
+</ul>                
+</div>
+<div class="col-extra d-none d-md-block">
+<div class="info text-right mb-1">
+<strong>DJ</strong>
+<div class="tags">
+<span class="badge badge-primary" 
+rel="nofollow">baile</span>
+<span class="badge badge-primary" 
+rel="nofollow">discomovil</span>
+</div>
+</div>
+</div>
+</div>
+</div>                                                     
+</div><!-- .artist-list -->
+<!-- PAGINATION -->
+<div class="d-flex justify-content-center mt-4">
+<nav aria-label="artist-pagination">
+<!--<ul class="pagination">
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Previous">
+<span aria-hidden="true">&laquo;</span>
+</a>
+</li>
+<li class="page-item"><a class="page-link" href="#">1</a></li>
+<li class="page-item active"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Next">
+<span aria-hidden="true">&raquo;</span>
+</a>
+</li>
+</ul>-->
+<ul class="pagination">
+<li class="page-item"><a class="page-link" rel="nofollow" href="{% url 'basic_app:artistone' %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+<li class="page-item "><a class="page-link" rel="nofollow" rel="nofollow" href="{% url 'basic_app:artistone' %}">1</a></li>
+<li class="page-item active"><a class="page-link" rel="nofollow"  href="{% url 'basic_app:artisttwo' %}">2</a></li>
+<li class="page-item"><a class="page-link" rel="nofollow" href="{% url 'basic_app:artistone' %}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+</ul>
+</nav>
+</div>
+</div><!-- #content -->
+</div><!-- .row -->
+</div><!-- .container -->
+<footer class="page-footer">
+<div class="container">
+<div class="clearfix text-center">
+<ul class="float-lg-left list-inline footer-links">
+    <li class='list-inline-item'><a href="{% url 'basic_app:about' %}">Quiénes Somos</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:faq' %}">Preguntas frecuentes</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:contact' %}">Contacto</a></li>
+<li class='list-inline-item'><a href="{% url 'basic_app:legal' %}">Condiciones legales</a></li>
+<li class='list-inline-item'><a href='http://quenoparelafiesta.es/' target='_blank'>#QueNoPareLaFiesta</a></li>
+</ul>
+<ul class="float-lg-right list-inline share-icons mt-4 mt-lg-0">
+<li class="list-inline-item share-icon"><a href="https://www.facebook.com/pages/unAplauso/41439617363" target="_blank"><img width="24" height="24" alt="facebook" src="//www.unaplauso.com/img/ua2.5-icons/social/Facebook.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://twitter.com/#!/unAplauso_es" target="_blank"><img width="24" height="24" alt="twitter" src="//www.unaplauso.com/img/ua2.5-icons/social/Twitter.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://www.instagram.com/unaplauso.es/" target="_blank"><img width="24" height="24" alt="instagram" src="//www.unaplauso.com/img/ua2.5-icons/social/Instagram.svg" /></a></li>
+<li class="list-inline-item share-icon"><a href="https://www.linkedin.com/company/unaplauso.com/" target="_blank"><img width="24" height="24" alt="linkedIn" src="//www.unaplauso.com/img/ua2.5-icons/social/LinkedIn.svg" /></a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>   
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/scripts.js"></script>
+</body>
+</html>

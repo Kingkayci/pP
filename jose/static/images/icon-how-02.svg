@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="250px" viewBox="0 0 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-how-02</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="190" height="190" rx="18.0952381"></rect>
+        <filter x="-24.2%" y="-23.2%" width="148.4%" height="148.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-267.000000, -1740.000000)">
+            <g id="CONTENT-[0v]" transform="translate(-9.000000, 0.000000)">
+                <g id="how" transform="translate(9.000000, 1644.000000)">
+                    <g id="Group-5" transform="translate(47.000000, 124.000000)">
+                        <g id="02" transform="translate(240.000000, 0.000000)">
+                            <g id="icon-how-02" transform="translate(10.000000, 0.000000)">
+                                <g id="icon" fill-rule="nonzero">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                                </g>
+                                <g id="Group" transform="translate(43.428571, 38.904762)" stroke="#E2192D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.53793073">
+                                    <ellipse id="Oval" transform="translate(51.120809, 43.331054) rotate(-19.630000) translate(-51.120809, -43.331054) " cx="51.1208087" cy="43.3310535" rx="33.4804965" ry="33.5239183"></ellipse>
+                                    <polyline id="Path" points="68.7463054 46.8603563 66.9835796 59.2201087 35.2545156 59.2201087 33.4917898 46.8603563"></polyline>
+                                    <path d="M51.7536289,29.2035671 L58.1699507,46.8603563" id="Path"></path>
+                                    <path d="M44.0681445,46.8603563 L50.4844663,29.2035671" id="Path"></path>
+                                    <path d="M70.2622496,36.2662828 L68.7463054,46.8603563" id="Path"></path>
+                                    <path d="M58.1699507,46.8603563 L68.7463054,36.2662828" id="Path"></path>
+                                    <path d="M33.4917898,36.2662828 L44.0681445,46.8603563" id="Path"></path>
+                                    <path d="M33.4917898,46.8603563 L31.9758456,36.2662828" id="Path"></path>
+                                    <ellipse id="Oval" cx="51.1190476" cy="25.6722093" rx="3.52545156" ry="3.53135783"></ellipse>
+                                    <ellipse id="Oval" cx="31.729064" cy="32.7349249" rx="3.52545156" ry="3.53135783"></ellipse>
+                                    <ellipse id="Oval" cx="70.5090312" cy="32.7349249" rx="3.52545156" ry="3.53135783"></ellipse>
+                                    <polyline id="Path" points="47.5935961 76.8768979 28.2036125 112.190476 22.9154351 98.0650449 5.28817734 98.0650449 24.6781609 66.2828244"></polyline>
+                                    <polyline id="Path" points="54.6444992 76.8768979 74.0344828 112.190476 79.3226601 98.0650449 96.9499179 98.0650449 77.5599343 66.2828244"></polyline>
+                                    <path d="M93.4244663,46.8603563 L102.238095,46.8603563" id="Path"></path>
+                                    <path d="M93.4244663,39.7976406 L99.2943432,34.5006039" id="Path"></path>
+                                    <path d="M93.4244663,53.9230719 L99.2943432,59.2201087" id="Path"></path>
+                                    <path d="M8.8136289,46.8603563 L0,46.8603563" id="Path"></path>
+                                    <path d="M8.8136289,39.7976406 L2.94375205,34.5006039" id="Path"></path>
+                                    <path d="M8.8136289,53.9230719 L2.94375205,59.2201087" id="Path"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
